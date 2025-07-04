@@ -1,145 +1,153 @@
-// js/script.js
-
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. Fungsi Pesan Sambutan Dinamis ---
-    const greetingMessageElement = document.getElementById('greeting-message');
-    if (greetingMessageElement) {
-        // Meminta nama pengguna
-        const userName = prompt("Halo! Silakan masukkan nama Anda:");
-        if (userName) {
-            greetingMessageElement.textContent = `Hi ${userName}, Selamat Datang di Website!`;
-        } else {
-            greetingMessageElement.textContent = `Hi Pengunjung, Selamat Datang di Website!`;
-        }
+    // --- Elements ---
+    const userNameSpan = document.getElementById('user-name');
+    const navLinks = document.querySelectorAll('button[data-section]');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOpenIcon = document.getElementById('menu-open-icon');
+    const menuCloseIcon = document.getElementById('menu-close-icon');
+    const contactForm = document.getElementById('contact-form');
+    const submitButton = document.getElementById('submit-button');
+    const submittedDataDisplay = document.getElementById('submitted-data-display');
+    const footerYear = document.getElementById('footer-year');
+    const portfolioBtn = document.getElementById('portfolio-btn');
+    const mobilePortfolioBtn = document.getElementById('mobile-portfolio-btn');
+
+    // --- Welcome Prompt ---
+    const name = window.prompt("What's your name?", "Guest");
+    if (userNameSpan && name) {
+        userNameSpan.textContent = name.trim() || "Guest";
     }
 
-    // --- 2. Navigasi Halaman ---
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const pageSections = document.querySelectorAll('.page-section');
-    const hamburger = document.querySelector('.hamburger');
-    const mobileNavLinks = document.querySelector('.nav-links');
-
-    // Fungsi untuk menampilkan halaman yang dipilih
-    const showPage = (pageId) => {
-        pageSections.forEach(section => {
-            section.classList.remove('active'); // Sembunyikan semua section
+    // --- Dynamic Footer Year ---
+    if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
+    }
+    
+    // --- Portfolio Alert ---
+    const showPortfolioAlert = () => alert("Portfolio coming soon!");
+    if (portfolioBtn) portfolioBtn.addEventListener('click', showPortfolioAlert);
+    if (mobilePortfolioBtn) {
+        mobilePortfolioBtn.addEventListener('click', () => {
+            showPortfolioAlert();
+            closeMobileMenu(); // also close menu on click
         });
-        const activeSection = document.getElementById(pageId);
-        if (activeSection) {
-            activeSection.classList.add('active'); // Tampilkan section yang sesuai
+    }
+
+    // --- Smooth Scrolling ---
+    const handleNavClick = (event) => {
+        const sectionId = event.currentTarget.dataset.section;
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
         }
-
-        // Hapus kelas 'active' dari semua link navigasi
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-        });
-        // Tambahkan kelas 'active' ke link yang diklik
-        const clickedLink = document.querySelector(`.nav-links a[data-page="${pageId}"]`);
-        if (clickedLink) {
-            clickedLink.classList.add('active');
+        // If it's a mobile link, close the menu
+        if (mobileMenu.contains(event.currentTarget)) {
+            closeMobileMenu();
         }
     };
 
-    // Tambahkan event listener ke setiap link navigasi
     navLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault(); // Mencegah perilaku default link
-            const pageId = event.target.dataset.page; // Ambil ID halaman dari data-page attribute
-            showPage(pageId);
-
-            // Sembunyikan menu mobile setelah link diklik (jika aktif)
-            if (mobileNavLinks.classList.contains('active')) {
-                mobileNavLinks.classList.remove('active');
-            }
-        });
+        link.addEventListener('click', handleNavClick);
     });
 
-    // Event listener untuk hamburger menu (mobile)
-    hamburger.addEventListener('click', () => {
-        mobileNavLinks.classList.toggle('active');
-    });
+    // --- Mobile Menu Toggle ---
+    const toggleMobileMenu = () => {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenu.classList.toggle('hidden');
+        menuOpenIcon.classList.toggle('hidden');
+        menuCloseIcon.classList.toggle('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+    };
+    
+    const closeMobileMenu = () => {
+        mobileMenu.classList.add('hidden');
+        menuOpenIcon.classList.remove('hidden');
+        menuCloseIcon.classList.add('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+    }
 
-    // Tampilkan halaman 'home' secara default saat pertama kali dimuat
-    showPage('home');
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+    }
 
-    // --- 3. Validasi Formulir dan Tampilan Data ---
-    const messageUsForm = document.getElementById('message-us-form');
-    const formOutput = document.getElementById('form-output');
-    const outputData = document.getElementById('output-data');
-
-    if (messageUsForm) {
-        messageUsForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Mencegah pengiriman formulir default
-
-            // Ambil elemen input
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            const phoneInput = document.getElementById('phone');
-            const messageInput = document.getElementById('message');
-
-            // Ambil elemen pesan error
-            const nameError = document.getElementById('name-error');
-            const emailError = document.getElementById('email-error');
-            const phoneError = document.getElementById('phone-error');
-            const messageError = document.getElementById('message-error');
-
-            // Reset pesan error sebelumnya
-            nameError.textContent = '';
-            emailError.textContent = '';
-            phoneError.textContent = '';
-            messageError.textContent = '';
-
-            let isValid = true; // Flag validasi
-
-            // Validasi Nama
-            if (nameInput.value.trim() === '') {
-                nameError.textContent = 'Nama tidak boleh kosong.';
-                isValid = false;
-            }
-
-            // Validasi Email
-            if (emailInput.value.trim() === '') {
-                emailError.textContent = 'Email tidak boleh kosong.';
-                isValid = false;
-            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-                emailError.textContent = 'Format email tidak valid.';
-                isValid = false;
-            }
-
-            // Validasi Nomor Telepon (contoh sederhana: hanya angka)
-            if (phoneInput.value.trim() === '') {
-                phoneError.textContent = 'Nomor telepon tidak boleh kosong.';
-                isValid = false;
-            } else if (!/^\d+$/.test(phoneInput.value)) { // Hanya angka
-                phoneError.textContent = 'Nomor telepon hanya boleh berisi angka.';
-                isValid = false;
-            }
-
-            // Validasi Pesan
-            if (messageInput.value.trim() === '') {
-                messageError.textContent = 'Pesan tidak boleh kosong.';
-                isValid = false;
-            }
-
-            // Jika semua validasi berhasil
+    // --- Form Validation & Submission ---
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const isValid = validateForm();
             if (isValid) {
-                // Kumpulkan data formulir
-                const formData = {
-                    Nama: nameInput.value.trim(),
-                    Email: emailInput.value.trim(),
-                    'Nomor Telepon': phoneInput.value.trim(),
-                    Pesan: messageInput.value.trim()
-                };
-
-                // Tampilkan data di area output
-                outputData.textContent = JSON.stringify(formData, null, 2); // Format JSON dengan indentasi 2 spasi
-                formOutput.style.display = 'block'; // Tampilkan area output
-
-                // Opsional: Reset formulir setelah pengiriman
-                messageUsForm.reset();
-            } else {
-                formOutput.style.display = 'none'; // Sembunyikan output jika ada error
+                submitForm();
             }
         });
     }
+    
+    const validateForm = () => {
+        let isValid = true;
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        
+        inputs.forEach(input => {
+            const errorElement = input.nextElementSibling;
+            clearError(input, errorElement); // Clear previous errors
+            if (input.required && input.value.trim() === '') {
+                isValid = false;
+                showError(input, errorElement, 'This field is required.');
+            } else if (input.type === 'email' && !/\S+@\S+\.\S+/.test(input.value)) {
+                isValid = false;
+                showError(input, errorElement, 'Please enter a valid email address.');
+            } else if (input.id === 'phone' && !/^\d+$/.test(input.value)) {
+                isValid = false;
+                showError(input, errorElement, 'Phone number must contain only digits.');
+            }
+        });
+
+        return isValid;
+    };
+    
+    const showError = (input, errorElement, message) => {
+        input.classList.add('invalid');
+        if (errorElement) errorElement.textContent = message;
+    }
+
+    const clearError = (input, errorElement) => {
+        input.classList.remove('invalid');
+        if(errorElement) errorElement.textContent = '';
+    }
+
+    const submitForm = () => {
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+
+        // Simulate API call
+        setTimeout(() => {
+            displaySubmittedData(data);
+            contactForm.reset();
+            inputs.forEach(input => clearError(input, input.nextElementSibling));
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit';
+        }, 1000);
+    };
+
+    const displaySubmittedData = (data) => {
+        submittedDataDisplay.innerHTML = `
+            <div>
+                <p><strong>Name:</strong> ${escapeHTML(data.name)}</p>
+                <p><strong>Email:</strong> ${escapeHTML(data.email)}</p>
+                <p><strong>Phone:</strong> ${escapeHTML(data.phone)}</p>
+                <p><strong>Message:</strong></p>
+                <p class="message-display">${escapeHTML(data.message)}</p>
+            </div>
+        `;
+    };
+    
+    const inputs = contactForm ? Array.from(contactForm.querySelectorAll('input, textarea')) : [];
+
+    const escapeHTML = (str) => {
+        const p = document.createElement("p");
+        p.textContent = str;
+        return p.innerHTML;
+    };
 });

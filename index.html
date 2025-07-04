@@ -1,122 +1,162 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Perusahaan</title>
-    <!-- Menghubungkan file CSS eksternal -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Memuat Font Awesome untuk ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Profile</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <!-- Header dan Navigasi -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="logo">Logo Perusahaan</div>
-            <ul class="nav-links">
-                <li><a href="#" data-page="home">Beranda</a></li>
-                <li><a href="#" data-page="profile">Profil Kami</a></li>
-                <li><a href="#" data-page="message">Hubungi Kami</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-corp">Corp</span>Site
             </div>
+            <nav class="desktop-nav">
+                <button data-section="home" class="nav-link">Home</button>
+                <button data-section="profile" class="nav-link">Our Profile</button>
+                <button id="portfolio-btn" class="nav-link">Portfolio</button>
+                <button data-section="contact" class="nav-link">Message Us</button>
+            </nav>
+            <div class="mobile-menu-button-wrapper">
+                <button id="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false">
+                    <svg id="menu-open-icon" class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="menu-close-icon" class="icon hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <nav id="mobile-menu" class="mobile-menu hidden">
+            <button data-section="home" class="nav-link">Home</button>
+            <button data-section="profile" class="nav-link">Our Profile</button>
+            <button id="mobile-portfolio-btn" class="nav-link">Portfolio</button>
+            <button data-section="contact" class="nav-link">Message Us</button>
         </nav>
     </header>
 
-    <!-- Konten Halaman -->
-    <main class="main-content">
-        <!-- Bagian Beranda -->
-        <section id="home" class="page-section active">
-            <div class="hero-section">
-                <h1 id="greeting-message">Hi, Selamat Datang di Website!</h1>
-                <p>Jelajahi lebih lanjut tentang perusahaan kami.</p>
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-overlay">
+                <h1 class="hero-title">Hi <span id="user-name" class="user-name-highlight">Guest</span>,</h1>
+                <p class="hero-subtitle">Welcome To Our Website</p>
             </div>
+        </section>
 
-            <div class="headquarter-section">
-                <h2>Kantor Pusat Kami</h2>
-                <div class="locations">
-                    <div class="location-circle">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Jakarta</span>
+        <section id="headquarters" class="headquarters-section">
+            <div class="container section-container">
+                <h2 class="section-title">Our Headquarters</h2>
+                <div class="section-divider"></div>
+                <div class="locations-container">
+                    <div class="location-card">
+                        <div class="location-icon-outer">
+                            <div class="location-icon-inner">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="location-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="location-name">Jakarta</h3>
                     </div>
-                    <div class="location-circle">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Bandung</span>
+                    <div class="location-card">
+                        <div class="location-icon-outer">
+                            <div class="location-icon-inner">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="location-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="location-name">Bandung</h3>
                     </div>
-                    <div class="location-circle">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Surabaya</span>
+                    <div class="location-card">
+                        <div class="location-icon-outer">
+                            <div class="location-icon-inner">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="location-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="location-name">Surabaya</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Bagian Profil Kami -->
-        <section id="profile" class="page-section">
-            <div class="profile-banner">
-                <!-- Placeholder untuk gambar banner -->
-                <img src="https://placehold.co/1200x300/A0C4FF/ffffff?text=Photo+Banner+Perusahaan" alt="Photo Banner Perusahaan">
-            </div>
-            <div class="profile-content">
-                <h2>Tentang Perusahaan Kami</h2>
-                <p>
-                    Kami adalah perusahaan inovatif yang berdedikasi untuk menyediakan solusi terbaik bagi pelanggan kami. Didirikan pada tahun [Tahun Pendirian], kami telah berkembang pesat berkat komitmen terhadap kualitas dan kepuasan pelanggan. Kami percaya pada nilai-nilai inti seperti integritas, inovasi, dan kolaborasi.
-                </p>
-
-                <h2>Visi dan Misi Perusahaan</h2>
-                <h3>Visi</h3>
-                <p>
-                    Menjadi pemimpin pasar dalam industri [Nama Industri] dengan terus berinovasi dan memberikan nilai yang luar biasa kepada semua pemangku kepentingan kami. Kami bercita-cita untuk menciptakan dampak positif yang berkelanjutan bagi masyarakat dan lingkungan.
-                </p>
-                <h3>Misi</h3>
-                <ul>
-                    <li>Mengembangkan produk dan layanan berkualitas tinggi yang memenuhi dan melampaui harapan pelanggan.</li>
-                    <li>Membangun tim yang berdedikasi, kompeten, dan berbudaya kolaboratif.</li>
-                    <li>Mendorong inovasi berkelanjutan melalui penelitian dan pengembangan yang agresif.</li>
-                    <li>Menjaga praktik bisnis yang etis dan bertanggung jawab secara sosial.</li>
-                    <li>Memperluas jangkauan pasar kami secara global.</li>
-                </ul>
+        <section id="profile" class="profile-section">
+            <div class="container section-container">
+                <h2 class="section-title">Our Profile</h2>
+                <div class="section-divider"></div>
+                <div class="profile-content">
+                    <div class="profile-image-container">
+                        <img src="https://picsum.photos/800/600?random=1" alt="Company Team" class="profile-image"/>
+                    </div>
+                    <div class="profile-text">
+                        <div>
+                            <h3 class="subsection-title">About Us</h3>
+                            <p class="text-content">
+                                We are a forward-thinking technology company dedicated to creating innovative solutions that drive progress and empower businesses. With a passion for excellence and a commitment to our clients, we turn complex challenges into elegant, effective results. Our team of experts brings together diverse skills and a shared vision to push the boundaries of what's possible.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="subsection-title">Vision & Mission</h3>
+                            <p class="text-content">
+                                Our vision is to be a global leader in digital transformation, recognized for our creativity, integrity, and impact. Our mission is to deliver superior value to our stakeholders by providing cutting-edge technology, exceptional service, and fostering a culture of continuous improvement and collaboration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Bagian Hubungi Kami (Message Us) -->
-        <section id="message" class="page-section">
-            <div class="message-form-container">
-                <h2>Kirim Pesan kepada Kami</h2>
-                <form id="message-us-form" class="message-form">
-                    <div class="form-group">
-                        <label for="name">Nama:</label>
-                        <input type="text" id="name" name="name" required>
-                        <span class="error-message" id="name-error"></span>
+        <section id="contact" class="contact-section">
+            <div class="container section-container">
+                <h2 class="section-title">Message Us</h2>
+                <div class="section-divider"></div>
+                <div class="contact-grid">
+                    <form id="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required />
+                            <p class="error-message"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required />
+                            <p class="error-message"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" required />
+                            <p class="error-message"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" rows="4" class="form-input" required></textarea>
+                            <p class="error-message"></p>
+                        </div>
+                        <button type="submit" id="submit-button" class="submit-button">Submit</button>
+                    </form>
+                    <div class="submitted-info-container">
+                        <h3 class="submitted-info-title">Your Submitted Information:</h3>
+                        <div id="submitted-data-display">
+                            <p class="placeholder-text">Your form submission will appear here.</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                        <span class="error-message" id="email-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Nomor Telepon:</label>
-                        <input type="tel" id="phone" name="phone" required>
-                        <span class="error-message" id="phone-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Pesan Anda:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                        <span class="error-message" id="message-error"></span>
-                    </div>
-                    <button type="submit" class="submit-button">Kirim Pesan</button>
-                </form>
-                <div id="form-output" class="form-output">
-                    <h3>Data yang Dikirim:</h3>
-                    <pre id="output-data"></pre>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Menghubungkan file JavaScript eksternal -->
-    <script src="js/script.js"></script>
+    <footer class="site-footer-bottom">
+        <div class="container">
+            <p>&copy; <span id="footer-year"></span> CorpSite. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
