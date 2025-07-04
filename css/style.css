@@ -11,18 +11,18 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f9fafb; /* gray-50 */
-    color: #1f2937; /* gray-800 */
+    background-color: #f9fafb; 
+    color: #1f2937; 
     line-height: 1.6;
 }
 
 .container {
     width: 100%;
-    max-width: 1152px; /* A common width for 'max-w-6xl' */
+    max-width: 1152px; 
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.5rem; /* px-6 */
-    padding-right: 1.5rem; /* px-6 */
+    padding-left: 1.5rem; 
+    padding-right: 1.5rem; 
 }
 
 .hidden {
@@ -30,18 +30,18 @@ body {
 }
 
 .section-title {
-    font-size: 2.25rem; /* text-3xl */
+    font-size: 2.25rem; 
     font-weight: 700;
     text-align: center;
-    color: #1f2937; /* gray-800 */
+    color: #1f2937; 
     margin-bottom: 0.5rem;
 }
 
 .section-divider {
-    width: 6rem; /* w-24 */
-    height: 0.25rem; /* h-1 */
-    background-color: #3b82f6; /* blue-500 */
-    margin: 0 auto 3rem auto; /* mx-auto mb-12 */
+    width: 6rem; 
+    height: 0.25rem; 
+    background-color: #3b82f6; 
+    margin: 0 auto 3rem auto; 
 }
 
 .section-container {
@@ -69,13 +69,13 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem; /* text-2xl */
+    font-size: 1.5rem; 
     font-weight: 700;
     color: #1f2937;
 }
 
 .logo-corp {
-    color: #2563eb; /* blue-600 */
+    color: #2563eb; 
 }
 
 .nav-link {
@@ -83,12 +83,12 @@ body {
     border: none;
     cursor: pointer;
     font-size: 1rem;
-    color: #4b5563; /* gray-600 */
+    color: #4b5563; 
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #2563eb; /* blue-600 */
+    color: #2563eb; 
 }
 
 .desktop-nav {
@@ -96,7 +96,7 @@ body {
 }
 
 .desktop-nav > .nav-link {
-    margin-left: 2rem; /* space-x-8 */
+    margin-left: 2rem; 
 }
 
 .mobile-menu-button-wrapper {
@@ -107,7 +107,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    color: #4b5563; /* gray-600 */
+    color: #4b5563; 
 }
 
 #mobile-menu-button .icon {
@@ -118,7 +118,7 @@ body {
 .mobile-menu {
     background-color: white;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid #e5e7eb; /* border-gray-200 */
+    border-top: 1px solid #e5e7eb; 
 }
 
 .mobile-menu .nav-link {
@@ -129,7 +129,7 @@ body {
 }
 
 .mobile-menu .nav-link:hover {
-    background-color: #f9fafb; /* gray-50 */
+    background-color: #f9fafb; 
 }
 
 /* --- Hero Section --- */
@@ -158,7 +158,7 @@ body {
 }
 
 .user-name-highlight {
-    color: #60a5fa; /* blue-400 */
+    color: #60a5fa; 
 }
 
 .hero-subtitle {
@@ -167,7 +167,7 @@ body {
 
 /* --- Headquarters Section --- */
 .headquarters-section {
-    background-color: #f9fafb; /* gray-50 */
+    background-color: #f9fafb; 
 }
 
 .locations-container {
@@ -185,11 +185,11 @@ body {
 }
 
 .location-icon-outer {
-    width: 8rem; /* w-32 */
-    height: 8rem; /* h-32 */
+    width: 8rem; 
+    height: 8rem; 
     background-color: white;
-    border: 4px solid #e5e7eb; /* border-gray-200 */
-    border-radius: 9999px; /* rounded-full */
+    border: 4px solid #e5e7eb; 
+    border-radius: 9999px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,9 +202,9 @@ body {
 }
 
 .location-icon-inner {
-    width: 6rem; /* w-24 */
-    height: 6rem; /* h-24 */
-    background-color: #f3f4f6; /* bg-gray-100 */
+    width: 6rem; 
+    height: 6rem; 
+    background-color: #f3f4f6; 
     border-radius: 9999px;
     display: flex;
     align-items: center;
@@ -214,13 +214,13 @@ body {
 .location-icon {
     width: 2.5rem;
     height: 2.5rem;
-    color: #3b82f6; /* blue-500 */
+    color: #3b82f6; 
 }
 
 .location-name {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #374151; /* gray-700 */
+    color: #374151; 
 }
 
 
@@ -255,21 +255,21 @@ body {
 }
 
 .subsection-title {
-    font-size: 1.5rem; /* text-2xl */
+    font-size: 1.5rem; 
     font-weight: 600;
-    color: #374151; /* gray-700 */
+    color: #374151; 
     margin-bottom: 0.75rem;
 }
 
 .text-content {
-    color: #4b5563; /* gray-600 */
+    color: #4b5563; 
     line-height: 1.75;
 }
 
 
 /* --- Contact Section --- */
 .contact-section {
-    background-color: #f9fafb; /* gray-50 */
+    background-color: #f9fafb; 
 }
 
 .contact-grid {
@@ -293,14 +293,14 @@ body {
     display: block;
     font-size: 0.875rem;
     font-weight: 500;
-    color: #374151; /* gray-700 */
+    color: #374151; 
     margin-bottom: 0.25rem;
 }
 
 .form-input {
     width: 100%;
     padding: 0.75rem 0.75rem;
-    border: 1px solid #d1d5db; /* border-gray-300 */
+    border: 1px solid #d1d5db; 
     border-radius: 0.375rem;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -308,16 +308,16 @@ body {
 
 .form-input:focus {
     outline: none;
-    border-color: #2563eb; /* blue-600 */
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* ring-2 ring-blue-500 */
+    border-color: #2563eb; 
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); 
 }
 
 .form-input.invalid {
-    border-color: #ef4444; /* red-500 */
+    border-color: #ef4444; 
 }
 
 .error-message {
-    color: #ef4444; /* red-500 */
+    color: #ef4444; 
     font-size: 0.75rem;
     margin-top: 0.25rem;
     min-height: 1em;
@@ -325,7 +325,7 @@ body {
 
 .submit-button {
     width: 100%;
-    background-color: #2563eb; /* blue-600 */
+    background-color: #2563eb; 
     color: white;
     padding: 0.75rem 1rem;
     border: none;
@@ -336,25 +336,25 @@ body {
 }
 
 .submit-button:hover {
-    background-color: #1d4ed8; /* blue-700 */
+    background-color: #1d4ed8; 
 }
 
 .submit-button:disabled {
-    background-color: #9ca3af; /* gray-400 */
+    background-color: #9ca3af; 
     cursor: not-allowed;
 }
 
 .submitted-info-container {
-    background-color: #f3f4f6; /* gray-100 */
+    background-color: #f3f4f6; 
     padding: 1.5rem;
     border-radius: 0.5rem;
-    border: 1px solid #e5e7eb; /* gray-200 */
+    border: 1px solid #e5e7eb; 
 }
 
 .submitted-info-title {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #374151; /* gray-700 */
+    color: #374151;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #d1d5db;
@@ -387,14 +387,14 @@ body {
 
 /* --- Footer --- */
 .site-footer-bottom {
-    background-color: #1f2937; /* gray-800 */
+    background-color: #1f2937; 
     color: white;
     padding: 1.5rem 0;
     text-align: center;
 }
 
 /* --- Responsive Media Queries --- */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) { 
     .hero-title {
         font-size: 4rem;
     }

@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobilePortfolioBtn) {
         mobilePortfolioBtn.addEventListener('click', () => {
             showPortfolioAlert();
-            closeMobileMenu(); // also close menu on click
+            closeMobileMenu(); 
         });
     }
 
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         inputs.forEach(input => {
             const errorElement = input.nextElementSibling;
-            clearError(input, errorElement); // Clear previous errors
+            clearError(input, errorElement); 
             if (input.required && input.value.trim() === '') {
                 isValid = false;
                 showError(input, errorElement, 'This field is required.');
