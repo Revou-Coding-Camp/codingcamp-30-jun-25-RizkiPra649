@@ -1,0 +1,403 @@
+/* css/style.css */
+
+/* Reset CSS Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Menggunakan font Inter */
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header dan Navigasi */
+.header {
+    background-color: #1a202c; /* Warna gelap ala Tailwind: gray-900 */
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Shadow ala Tailwind */
+    border-radius: 0 0 1rem 1rem; /* Rounded bottom corners */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #63b3ed; /* Warna biru ala Tailwind: blue-400 */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: #2d3748; /* Warna gelap ala Tailwind: gray-800 */
+    color: #90cdf4; /* Warna biru muda ala Tailwind: blue-200 */
+}
+
+.hamburger {
+    display: none; /* Sembunyikan di desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Konten Utama */
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    border-radius: 1rem; /* Rounded corners */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Shadow ala Tailwind */
+}
+
+.page-section {
+    display: none; /* Sembunyikan semua section secara default */
+    padding: 2rem;
+}
+
+.page-section.active {
+    display: block; /* Tampilkan section yang aktif */
+}
+
+/* Gaya Bagian Beranda (Home) */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #63b3ed, #90cdf4); /* Gradient biru */
+    color: #fff;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.headquarter-section {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.headquarter-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2d3748;
+}
+
+.locations {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Agar responsif */
+}
+
+.location-circle {
+    background-color: #edf2f7; /* Warna abu-abu muda ala Tailwind: gray-200 */
+    border: 2px solid #a0aec0; /* Border abu-abu ala Tailwind: gray-400 */
+    border-radius: 50%; /* Membuat lingkaran */
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #4a5568; /* Warna abu-abu ala Tailwind: gray-700 */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.location-circle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.location-circle i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #4299e1; /* Warna biru ala Tailwind: blue-500 */
+}
+
+/* Gaya Bagian Profil Kami (Profile) */
+.profile-banner {
+    width: 100%;
+    height: 300px; /* Tinggi tetap untuk banner */
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.profile-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
+    border-radius: 1rem;
+}
+
+.profile-content h2 {
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #cbd5e0; /* Border ala Tailwind: gray-300 */
+    padding-bottom: 0.5rem;
+}
+
+.profile-content h3 {
+    font-size: 1.5rem;
+    color: #4a5568;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.profile-content p,
+.profile-content ul {
+    margin-bottom: 1rem;
+    color: #4a5568;
+}
+
+.profile-content ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+/* Gaya Bagian Hubungi Kami (Message Us) */
+.message-form-container {
+    padding: 2rem;
+    background-color: #f7fafc; /* Warna putih-abu ala Tailwind: gray-50 */
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.message-form-container h2 {
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.message-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.message-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #4a5568;
+}
+
+.message-form input[type="text"],
+.message-form input[type="email"],
+.message-form input[type="tel"],
+.message-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #cbd5e0; /* Border abu-abu ala Tailwind: gray-300 */
+    border-radius: 0.5rem; /* Rounded corners */
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.message-form input:focus,
+.message-form textarea:focus {
+    outline: none;
+    border-color: #4299e1; /* Biru ala Tailwind: blue-500 */
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Ring fokus ala Tailwind */
+}
+
+.message-form textarea {
+    resize: vertical; /* Memungkinkan textarea diubah ukurannya secara vertikal */
+}
+
+.error-message {
+    color: #e53e3e; /* Merah ala Tailwind: red-600 */
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block; /* Memastikan pesan error berada di baris baru */
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #4299e1; /* Biru ala Tailwind: blue-500 */
+    color: white;
+    border: none;
+    border-radius: 0.5rem; /* Rounded corners */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.submit-button:hover {
+    background-color: #3182ce; /* Biru lebih gelap ala Tailwind: blue-600 */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form-output {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #e2e8f0; /* Abu-abu muda ala Tailwind: gray-200 */
+    border-radius: 0.75rem;
+    border: 1px dashed #a0aec0; /* Border putus-putus */
+    display: none; /* Sembunyikan secara default */
+}
+
+.form-output h3 {
+    font-size: 1.2rem;
+    color: #2d3748;
+    margin-bottom: 0.8rem;
+}
+
+.form-output pre {
+    white-space: pre-wrap; /* Memastikan teks membungkus */
+    word-wrap: break-word; /* Memastikan kata-kata panjang tidak meluber */
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #4a5568;
+    background-color: #cbd5e0; /* Abu-abu lebih gelap */
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+
+/* Responsif untuk Tablet dan Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        display: none; /* Sembunyikan link di mobile secara default */
+        flex-direction: column;
+        width: 100%;
+        background-color: #1a202c;
+        position: absolute;
+        top: 60px; /* Di bawah header */
+        left: 0;
+        padding: 1rem 0;
+        border-radius: 0 0 1rem 1rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex; /* Tampilkan saat hamburger diklik */
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 1rem;
+    }
+
+    .hamburger {
+        display: block; /* Tampilkan hamburger di mobile */
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .headquarter-section h2,
+    .profile-content h2,
+    .message-form-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .location-circle {
+        width: 100px;
+        height: 100px;
+        font-size: 0.9rem;
+    }
+
+    .location-circle i {
+        font-size: 2rem;
+    }
+
+    .main-content {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .profile-banner {
+        height: 200px; /* Tinggi banner lebih kecil di mobile */
+    }
+}
+
+/* Responsif untuk Mobile yang Lebih Kecil */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .locations {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .location-circle {
+        width: 100%; /* Lingkaran memenuhi lebar */
+        max-width: 150px; /* Batasi ukuran maksimum */
+        height: 150px;
+        margin-bottom: 1rem;
+    }
+}

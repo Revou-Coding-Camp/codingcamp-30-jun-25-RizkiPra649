@@ -1,11 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profil Perusahaan</title>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Memuat Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
+    <!-- Header dan Navigasi -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Logo Perusahaan</div>
+            <ul class="nav-links">
+                <li><a href="#" data-page="home">Beranda</a></li>
+                <li><a href="#" data-page="profile">Profil Kami</a></li>
+                <li><a href="#" data-page="message">Hubungi Kami</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Konten Halaman -->
+    <main class="main-content">
+        <!-- Bagian Beranda -->
+        <section id="home" class="page-section active">
+            <div class="hero-section">
+                <h1 id="greeting-message">Hi, Selamat Datang di Website!</h1>
+                <p>Jelajahi lebih lanjut tentang perusahaan kami.</p>
+            </div>
+
+            <div class="headquarter-section">
+                <h2>Kantor Pusat Kami</h2>
+                <div class="locations">
+                    <div class="location-circle">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jakarta</span>
+                    </div>
+                    <div class="location-circle">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bandung</span>
+                    </div>
+                    <div class="location-circle">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Surabaya</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Profil Kami -->
+        <section id="profile" class="page-section">
+            <div class="profile-banner">
+                <!-- Placeholder untuk gambar banner -->
+                <img src="https://placehold.co/1200x300/A0C4FF/ffffff?text=Photo+Banner+Perusahaan" alt="Photo Banner Perusahaan">
+            </div>
+            <div class="profile-content">
+                <h2>Tentang Perusahaan Kami</h2>
+                <p>
+                    Kami adalah perusahaan inovatif yang berdedikasi untuk menyediakan solusi terbaik bagi pelanggan kami. Didirikan pada tahun [Tahun Pendirian], kami telah berkembang pesat berkat komitmen terhadap kualitas dan kepuasan pelanggan. Kami percaya pada nilai-nilai inti seperti integritas, inovasi, dan kolaborasi.
+                </p>
+
+                <h2>Visi dan Misi Perusahaan</h2>
+                <h3>Visi</h3>
+                <p>
+                    Menjadi pemimpin pasar dalam industri [Nama Industri] dengan terus berinovasi dan memberikan nilai yang luar biasa kepada semua pemangku kepentingan kami. Kami bercita-cita untuk menciptakan dampak positif yang berkelanjutan bagi masyarakat dan lingkungan.
+                </p>
+                <h3>Misi</h3>
+                <ul>
+                    <li>Mengembangkan produk dan layanan berkualitas tinggi yang memenuhi dan melampaui harapan pelanggan.</li>
+                    <li>Membangun tim yang berdedikasi, kompeten, dan berbudaya kolaboratif.</li>
+                    <li>Mendorong inovasi berkelanjutan melalui penelitian dan pengembangan yang agresif.</li>
+                    <li>Menjaga praktik bisnis yang etis dan bertanggung jawab secara sosial.</li>
+                    <li>Memperluas jangkauan pasar kami secara global.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Bagian Hubungi Kami (Message Us) -->
+        <section id="message" class="page-section">
+            <div class="message-form-container">
+                <h2>Kirim Pesan kepada Kami</h2>
+                <form id="message-us-form" class="message-form">
+                    <div class="form-group">
+                        <label for="name">Nama:</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan Anda:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error-message" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="submit-button">Kirim Pesan</button>
+                </form>
+                <div id="form-output" class="form-output">
+                    <h3>Data yang Dikirim:</h3>
+                    <pre id="output-data"></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Menghubungkan file JavaScript eksternal -->
+    <script src="js/script.js"></script>
 </body>
 </html>
